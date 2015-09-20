@@ -9,9 +9,14 @@
  Controls the relay remotely unless accelerometer detects that 
  we are upside down.
 
- Uses the SparkFun ESP8266 Thing, LSM6DS3 IMU, and an SSR. The LSM6DS3 is I2C
- and has the SparkFun standard I2C pinout so it solders directly onto the ESP8266
- Thing. 
+ Uses the SparkFun ESP8266 Thing, LSM6DS3 IMU, an SSR and the mobile app Blynk.
+ The LSM6DS3 is I2C and has the SparkFun standard I2C pinout so it solders 
+ directly onto the ESP8266 Thing. 
+
+ In Blynk You'll need to have a data display tied to virtual pin V0,
+ a button tied to virtual pin V2, and a value gauge tied to virtual pin
+ V1 with min/max values of -2/2.
+ 
 */
 
 #define BLYNK_PRINT Serial    // Comment this out to disable prints and save space
@@ -96,7 +101,7 @@ void sendUpdate()
   if(notifyBlynkPlease == true)
   {
     notifyBlynkPlease = false;
-    Blynk.notify("You're upside down! Turning off flame cannon.");
+    Blynk.notify("You're upside down! Turning off flame cannon."); //Push a message to the phone
   }
 }
 
