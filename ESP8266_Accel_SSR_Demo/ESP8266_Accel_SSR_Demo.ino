@@ -15,7 +15,8 @@
 
  In Blynk You'll need to have a data display tied to virtual pin V0,
  a button tied to virtual pin V2, and a value gauge tied to virtual pin
- V1 with min/max values of -2/2.
+ V1 with min/max values of -2/2. If you want to receive push notifications
+ you'll also need the notifications widget.
  
 */
 
